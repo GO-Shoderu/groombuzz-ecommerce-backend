@@ -62,4 +62,35 @@ The implementation is designed for seamless frontend integration.
 Filtering / Sorting / Pagination example:
 - `/api/items/?category=<id>&ordering=price&page=1`
 
+---
 
+## Database & Performance
+- Relational schema with well-defined foreign key relationships
+- Database indexing for frequent queries (category, price, created_at)
+- ORM optimizations using `select_related()` and `prefetch_related()`
+- Pagination to limit query load and improve response times
+
+---
+
+## API Documentation
+All endpoints will be documented using **Postman**, providing:
+- Clear request and response examples
+- Reusable collections for frontend integration
+- Easy testing and validation of API behavior
+
+---
+
+## Roadmap
+1. Initialize Django project and PostgreSQL configuration
+2. Implement JWT authentication
+3. Create Category and Item models
+4. Build CRUD APIs
+5. Add filtering, sorting, and pagination
+6. Document APIs using Postman
+7. Containerize with Docker and deploy
+8. Add CI/CD checks
+
+---
+
+## Collaboration
+This backend is designed to be consumed by a frontend application.
