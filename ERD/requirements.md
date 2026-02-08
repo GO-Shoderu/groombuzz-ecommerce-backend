@@ -68,4 +68,13 @@ Designing an Entity–Relationship Diagram (ERD) for **GroomBuzz**, a two-sided 
 - payment_method (ENUM: card | mobile_money | cash, NOT NULL)
 - payment_status (ENUM: pending | completed | failed, NOT NULL)
 
+### Review
+- review_id (PK, UUID)
+- booking_id (FK → Booking.booking_id)
+- business_id (FK → Business.business_id)
+- client_id (FK → User.user_id)
+- rating (INT, CHECK 1–5, NOT NULL)
+- comment (TEXT, NOT NULL)
+- created_at (TIMESTAMP, DEFAULT current timestamp)
+
 
