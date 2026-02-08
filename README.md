@@ -36,4 +36,30 @@ The implementation is designed for seamless frontend integration.
 - Sort results (e.g., by price)
 - Paginated responses for large datasets
 
+---
+
+## Planned API Endpoints
+
+### Authentication
+- `POST /api/auth/register/`
+- `POST /api/auth/token/`
+- `POST /api/auth/token/refresh/`
+
+### Categories
+- `GET /api/categories/`
+- `POST /api/categories/`
+- `GET /api/categories/{id}/`
+- `PUT/PATCH /api/categories/{id}/`
+- `DELETE /api/categories/{id}/`
+
+### Items (Services / Products)
+- `GET /api/items/`
+- `POST /api/items/`
+- `GET /api/items/{id}/`
+- `PUT/PATCH /api/items/{id}/`
+- `DELETE /api/items/{id}/`
+
+Filtering / Sorting / Pagination example:
+- `/api/items/?category=<id>&ordering=price&page=1`
+
 
