@@ -1,4 +1,4 @@
-# GroomBuzz E-Commerce Backend (Project Nexus)
+# GroomBuzz E-Commerce Backend
 
 ## Overview
 GroomBuzz is a **service discovery and listing platform** that connects clients to grooming and self-care services. Similar to property listing or ride-hailing platforms, GroomBuzz allows users to **search, browse, and discover services** based on their needs, while service offerings are organized into structured listings.
