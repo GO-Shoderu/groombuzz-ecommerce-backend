@@ -30,4 +30,12 @@ Designing an Entity–Relationship Diagram (ERD) for **GroomBuzz**, a two-sided 
 - created_at (TIMESTAMP, DEFAULT current timestamp)
 - updated_at (TIMESTAMP, auto-update)
 
+### Category
+- category_id (PK, UUID)
+- name (TEXT, UNIQUE, NOT NULL)
+- slug (TEXT, UNIQUE, NOT NULL)
+- description (TEXT, NULL)
+- is_active (BOOLEAN, DEFAULT true)
+- created_at (TIMESTAMP, DEFAULT current timestamp)
+
 
