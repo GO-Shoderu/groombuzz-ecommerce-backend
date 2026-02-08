@@ -51,4 +51,13 @@ Designing an Entity–Relationship Diagram (ERD) for **GroomBuzz**, a two-sided 
 - created_at (TIMESTAMP, DEFAULT current timestamp)
 - updated_at (TIMESTAMP, auto-update)
 
+### Booking
+- booking_id (PK, UUID)
+- service_id (FK → Service.service_id)
+- client_id (FK → User.user_id)
+- booking_date (DATE, NOT NULL)
+- start_time (TIME, NOT NULL)
+- status (ENUM: pending | confirmed | canceled | completed, NOT NULL)
+- created_at (TIMESTAMP, DEFAULT current timestamp)
+
 
