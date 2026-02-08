@@ -104,4 +104,10 @@ Designing an Entity–Relationship Diagram (ERD) for **GroomBuzz**, a two-sided 
 | **User → Message (receives)**             | `User (1) —— (0..N) Message`        | `Message.recipient_id → User.user_id`                | A user can receive zero or many messages; each message has one recipient. |
 | **Business → Message (context)**          | `Business (1) —— (0..N) Message`    | `Message.business_id → Business.business_id`         | Messages are tied to a business context so client–business conversations can be grouped per business. |
 
+---
 
+## Visual Representation
+
+A visual Entity–Relationship Diagram (ERD) illustrating the entities and relationships described above. The diagram shows primary keys (PK), foreign keys (FK), and cardinalities for User, Business, Category, Service, Booking, Payment, Review, and Message.
+
+![ERD diagram](./groombuzz-erd.png)
