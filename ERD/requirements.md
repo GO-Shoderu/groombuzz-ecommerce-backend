@@ -77,4 +77,12 @@ Designing an Entity–Relationship Diagram (ERD) for **GroomBuzz**, a two-sided 
 - comment (TEXT, NOT NULL)
 - created_at (TIMESTAMP, DEFAULT current timestamp)
 
+### Message
+- message_id (PK, UUID)
+- sender_id (FK → User.user_id)
+- recipient_id (FK → User.user_id)
+- business_id (FK → Business.business_id)
+- message_body (TEXT, NOT NULL)
+- sent_at (TIMESTAMP, DEFAULT current timestamp)
+
 
