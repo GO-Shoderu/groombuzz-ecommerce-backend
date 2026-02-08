@@ -38,4 +38,17 @@ Designing an Entity–Relationship Diagram (ERD) for **GroomBuzz**, a two-sided 
 - is_active (BOOLEAN, DEFAULT true)
 - created_at (TIMESTAMP, DEFAULT current timestamp)
 
+### Service
+- service_id (PK, UUID)
+- business_id (FK → Business.business_id)
+- category_id (FK → Category.category_id)
+- name (TEXT, NOT NULL)
+- description (TEXT, NULL)
+- price (DECIMAL(10,2), NOT NULL)
+- currency (TEXT, DEFAULT 'ZAR')
+- duration_minutes (INT, NULL)
+- is_available (BOOLEAN, DEFAULT true)
+- created_at (TIMESTAMP, DEFAULT current timestamp)
+- updated_at (TIMESTAMP, auto-update)
+
 
