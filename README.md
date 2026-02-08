@@ -17,4 +17,23 @@ The implementation is designed for seamless frontend integration.
 - **Docker** — containerized deployment
 - **CI/CD (GitHub Actions)** — automated workflows
 
+---
+
+## Core Features (MVP)
+
+### 1) Authentication
+- User authentication using JWT (login & token refresh)
+- Protected endpoints for authorized access
+
+### 2) Catalog Management (CRUD)
+- Create, read, update, and delete **Categories**  
+  (e.g., Barbershop, Nail Salon, Skincare, Massage)
+- Create, read, update, and delete **Items**  
+  (services or products listed under categories)
+
+### 3) Service Discovery
+- Filter services by category
+- Sort results (e.g., by price)
+- Paginated responses for large datasets
+
 
