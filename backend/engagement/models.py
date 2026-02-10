@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class TimeStampedModel(models.Model):
@@ -26,7 +27,9 @@ class Review(TimeStampedModel):
         on_delete=models.CASCADE,
         related_name="reviews",
     )
-    rating = models.PositiveSmallIntegerField()
+    rating = models.PositiveSmallIntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )
     comment = models.TextField()
 
     class Meta:
