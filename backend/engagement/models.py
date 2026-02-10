@@ -38,3 +38,29 @@ class Review(TimeStampedModel):
     def __str__(self):
         return f"Review({self.rating}/5 by {self.client})"
 
+
+class Message(TimeStampedModel):
+    sender = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="sent_messages",
+    )
+    recipient = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="received_messages",
+    )
+    business = models.ForeignKey(
+        "catalog.Business",
+        on_delete=models.CASCADE,
+        related_name="messages",
+    )
+    message_body = models.TextField()
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["created_at"]),
+        ]
+
+    def __str__(self):
+        return f"Message({self.sender} → {self.recipient})"
