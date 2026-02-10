@@ -36,3 +36,19 @@ class Business(TimeStampedModel):
     def __str__(self):
         return self.name
 
+
+class Category(TimeStampedModel):
+    name = models.CharField(max_length=120, unique=True)
+    slug = models.SlugField(max_length=140, unique=True)
+    description = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["name"]),
+            models.Index(fields=["slug"]),
+        ]
+
+    def __str__(self):
+        return self.name
+
