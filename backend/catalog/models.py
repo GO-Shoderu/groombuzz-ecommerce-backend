@@ -52,3 +52,32 @@ class Category(TimeStampedModel):
     def __str__(self):
         return self.name
 
+
+class Service(TimeStampedModel):
+    business = models.ForeignKey(
+        Business,
+        on_delete=models.CASCADE,
+        related_name="services",
+    )
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.PROTECT,
+        related_name="services",
+    )
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    currency = models.CharField(max_length=10, default="ZAR")
+    duration_minutes = models.PositiveIntegerField(null=True, blank=True)
+
+    is_available = models.BooleanField(default=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["price"]),
+            models.Index(fields=["created_at"]),
+        ]
+
+    def __str__(self):
+        return f"{self.name} ({self.business.name})"
