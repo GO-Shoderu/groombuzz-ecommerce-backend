@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.core.validators import MinValueValidator
 
 
 class TimeStampedModel(models.Model):
@@ -60,7 +61,13 @@ class Payment(TimeStampedModel):
         on_delete=models.CASCADE,
         related_name="payments",
     )
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+    )
+
     payment_method = models.CharField(
         max_length=20,
         choices=Method.choices,
