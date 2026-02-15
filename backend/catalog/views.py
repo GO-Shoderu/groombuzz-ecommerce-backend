@@ -1,11 +1,12 @@
 from rest_framework import viewsets, permissions
 from .models import Business, Category, Service
 from .serializers import BusinessSerializer, CategorySerializer, ServiceSerializer
-
+from common.permissions import IsStaffOrReadOnly
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    permission_classes = [IsStaffOrReadOnly]
 
 
 class BusinessViewSet(viewsets.ModelViewSet):
