@@ -35,6 +35,11 @@ CSRF_TRUSTED_ORIGINS = [
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "").split(",") if h.strip()]
 
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"   # where collectstatic will put files
+
+# Optional but recommended:
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Application definition
 
@@ -59,6 +64,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
