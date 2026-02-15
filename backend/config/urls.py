@@ -30,3 +30,16 @@ urlpatterns = [
     path("api/", include("transactions.urls")),
     path("api/", include("engagement.urls")),
 ]
+
+from django.http import JsonResponse
+
+def health(request):
+    return JsonResponse({"status": "ok", "service": "GroomBuzz API"})
+
+urlpatterns = [
+    path("", health),
+    path("api/", include("accounts.urls")),
+    path("api/", include("catalog.urls")),
+    path("api/", include("transactions.urls")),
+    path("api/", include("engagement.urls")),
+]
