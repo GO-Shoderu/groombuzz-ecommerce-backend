@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.core.validators import MinValueValidator
 
 
 class TimeStampedModel(models.Model):
@@ -67,7 +68,12 @@ class Service(TimeStampedModel):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
 
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+    )
+
     currency = models.CharField(max_length=10, default="ZAR")
     duration_minutes = models.PositiveIntegerField(null=True, blank=True)
 
