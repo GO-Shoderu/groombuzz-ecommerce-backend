@@ -63,9 +63,9 @@ urlpatterns = [
     path("api/auth/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/auth/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 
-    # APIs (I recommend giving each app its own prefix)
-    path("api/accounts/", include("accounts.urls")),
-    path("api/catalog/", include("catalog.urls")),
-    path("api/transactions/", include("transactions.urls")),
-    path("api/engagement/", include("engagement.urls")),
+    # APIs
+    path("api/", include("accounts.urls")),
+    path("api/", include("catalog.urls")),
+    path("api/", include("transactions.urls")),
+    path("api/", include("engagement.urls")),
 ]
